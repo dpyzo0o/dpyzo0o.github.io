@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -75,7 +75,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '6.0.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="dpyzo0o&#39;s Notes">
 <meta property="og:description" content="开始准备写博客的时候，网上找了很多写博客的平台，比如博客园、CSDN、简书、SegmentFault。每一个都注册账号上去试了试，其实各有各的优缺点。博客园和CSDN很适合作为技术类的博客，但是这两个的界面太丑了，而且还有广告，简直不能忍。简书和SegmentFault的界面很清爽，而且对Markdown的支持也很好。本来准备就用其中一个来写了，后来无意间发现了Hexo + Github Pag">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-25T17:02:03.000Z">
+<meta property="og:updated_time" content="2018-02-25T22:50:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="开始准备写博客的时候，网上找了很多写博客的平台，比如博客园、CSDN、简书、SegmentFault。每一个都注册账号上去试了试，其实各有各的优缺点。博客园和CSDN很适合作为技术类的博客，但是这两个的界面太丑了，而且还有广告，简直不能忍。简书和SegmentFault的界面很清爽，而且对Markdown的支持也很好。本来准备就用其中一个来写了，后来无意间发现了Hexo + Github Pag">
@@ -344,21 +344,21 @@
 
       
         <p>开始准备写博客的时候，网上找了很多写博客的平台，比如博客园、CSDN、简书、SegmentFault。每一个都注册账号上去试了试，其实各有各的优缺点。博客园和CSDN很适合作为技术类的博客，但是这两个的界面太丑了，而且还有广告，简直不能忍。简书和SegmentFault的界面很清爽，而且对Markdown的支持也很好。本来准备就用其中一个来写了，后来无意间发现了Hexo + Github Pages的组合，大致了解了一下，很有geek的感觉。又发现很多优秀的前端开发都用了Github Pages来搭博客，就随波大流，决定用它了。其实搭建的过程并不复杂，网上也有很多教程供参考，这篇文章就来简单的记录下这个过程。</p>
-<h1 id="Hexo-的安装与使用"><a href="#Hexo-的安装与使用" class="headerlink" title="Hexo 的安装与使用"></a>Hexo 的安装与使用</h1><p>Hexo的安装很简单，前提是你已经安装好了 <code>Node.js</code> 和 <code>Git</code>，这两个的安装可以直接去到相应的官网下载安装包，Mac下推荐直接用 <code>Homebrew</code> 进行安装。接下来只需要在终端输入：</p>
+<h2 id="Hexo-的安装与使用"><a href="#Hexo-的安装与使用" class="headerlink" title="Hexo 的安装与使用"></a>Hexo 的安装与使用</h2><p>Hexo的安装很简单，前提是你已经安装好了 <code>Node.js</code> 和 <code>Git</code>，这两个的安装可以直接去到相应的官网下载安装包，Mac下推荐直接用 <code>Homebrew</code> 进行安装。接下来只需要在终端输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>安装完成后，可以在终端输入 <code>hexo</code> 检查是否安装成功。如果碰到 <code>hexo: command not found</code>，找到你的npm global package的安装目录，我的电脑上是 <code>/Users/dpyzo0o/.npm-global/bin/hexo</code>，然后把这个路径link到 <code>hexo</code> 命令上。我用的 <code>zsh</code>，所以只需要在 <code>.zshrc</code> 里面加上 <code>alias hexo=&#39;/Users/dpyzo0o/.npm-global/bin/hexo&#39;</code> 就可以了。</p>
 <p>然后需要初始化你的博客目录，终端输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
 <p>接下来就可以开始使用 <code>Hexo</code> 进行写作了，使用过程中主要会使用如下的几个命令，其它命令可以去<a href="https://hexo.io/docs/commands.html" target="_blank" rel="noopener">官网</a>查询。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;title&gt;  # 新建文章，在\source\_posts文件夹里</span><br><span class="line">hexo clean        # 清除本地的数据库和生成的public文件夹</span><br><span class="line">hexo generate     # 生成静态文件</span><br><span class="line">hexo server       # 运行在localhost，可用作预览</span><br><span class="line">hexo deploy       # 部署博客到Github等</span><br></pre></td></tr></table></figure>
-<h1 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h1><p>首先要在你的GitHub账户上创建一个新的repository，这里主要要注意的是repository的命名，一定要写成 <code>username.github.io</code>，<code>username</code> 必须和你的用户名完全一样。这样GitHub就为你创建了一个免费的域名，你可以通过 <code>https://username.github.io/</code> 来进行访问。</p>
+<h2 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h2><p>首先要在你的GitHub账户上创建一个新的repository，这里主要要注意的是repository的命名，一定要写成 <code>username.github.io</code>，<code>username</code> 必须和你的用户名完全一样。这样GitHub就为你创建了一个免费的域名，你可以通过 <code>https://username.github.io/</code> 来进行访问。</p>
 <p>接下来就是将Hexo与GitHub进行关联，Hexo提供了部署到远程仓库的功能，具体可以参考<a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">这里</a>。在进行部署之前，需要安装一个插件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>然后找到你的 <code>_config.yml</code> 配置文件，设置deploy为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>到目前为止，部署到GitHub的所有准备工作就完成了。当你写完一篇博客后，只需要下面的三个命令，就可以将文章部署到GitHub Pages上。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean      # 可选</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>拖了近一个月，总算是把博客搭起来了。这学期只选了两门课，于是决定利用大部分的时间来学习一下前端技术（其实是不想再学本专业的东西了-_-），这里就作为一个记录自己学习过程的地方吧。今天开始给自己立个flag，就是保证以后每周至少更新一篇，希望能督促一下自己把这个博客给坚持下去。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>拖了近一个月，总算是把博客搭起来了。这学期只选了两门课，于是决定利用大部分的时间来学习一下前端技术（其实是不想再学本专业的东西了-_-），这里就作为一个记录自己学习过程的地方吧。今天开始给自己立个flag，就是保证以后每周至少更新一篇，希望能督促一下自己把这个博客给坚持下去。</p>
 
       
     </div>
@@ -519,7 +519,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-的安装与使用"><span class="nav-number">1.</span> <span class="nav-text">Hexo 的安装与使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到-GitHub-Pages"><span class="nav-number">2.</span> <span class="nav-text">部署到 GitHub Pages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-的安装与使用"><span class="nav-number">1.</span> <span class="nav-text">Hexo 的安装与使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到-GitHub-Pages"><span class="nav-number">2.</span> <span class="nav-text">部署到 GitHub Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
@@ -561,7 +561,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.4</div>
 
 
 
