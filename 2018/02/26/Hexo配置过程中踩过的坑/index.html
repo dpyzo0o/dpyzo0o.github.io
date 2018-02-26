@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="dpyzo0o&#39;s Notes">
 <meta property="og:description" content="今天又折腾了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-26T23:17:19.000Z">
+<meta property="og:updated_time" content="2018-02-26T23:19:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo配置过程中踩过的坑">
 <meta name="twitter:description" content="今天又折腾了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。">
@@ -327,7 +327,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-27T00:17:19+01:00">2018-02-27</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-27T00:19:19+01:00">2018-02-27</time>
             
           </span>
 
@@ -402,7 +402,7 @@
 <h2 id="VS-Code-写-Mardown-出现隐藏字符"><a href="#VS-Code-写-Mardown-出现隐藏字符" class="headerlink" title="VS Code 写 Mardown 出现隐藏字符"></a>VS Code 写 Mardown 出现隐藏字符</h2><p>在写第一篇博文的时候，实际也是自己第一次用 Markdown 完整的写一篇文章，由于最近一直在使用 VS Code，貌似其对 Markdown 的支持也不错，就直接拿来用了。写的过程中确实也比较顺手，实时预览和同步滚动的功能都很不错，在这里推荐一波。在 Mac 上写完、上传、预览都没有什么问题，不过当我在一台 Windows 电脑上打开博客时，就发现文章里面莫名的出现了许多乱码的符号。然后我就在 Mac 上用 Sublime 打开 Markdown 文件查看了一下，找到了问题。出现乱码的地方有样式为”BS”的字符，只不过在 Mac 版 VS Code 里面并没有显示出来，将这些字符删除后 Windows 上就可以正常的显示了。百度了一下发现也有人碰到了这个问题，这个字符其实是 ASCII 码中退格符的 Unicode 表示法，在 Mac 版 VS Code 里切换中英文输入法的过程中产生。目前来看可能是 VS Code 或者 Mac 系统的一个 bug，解决方案是开启 VS Code 的这个选项：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Controls whether the editor should render control characters</span><br><span class="line">&quot;editor.renderControlCharacters&quot;: true</span><br></pre></td></tr></table></figure>
 <p>这样 VS Code 里就会显示出这个隐藏的字符，看到时删除就好了。</p>
-<h2 id="Mist-主题的-margin-与其它主题不一致"><a href="#Mist-主题的-margin-与其它主题不一致" class="headerlink" title="Mist 主题的 margin 与其它主题不一致"></a>Mist 主题的 margin 与其它主题不一致</h2><p>由于自己有一点轻微的强迫症，开始在几个主题间换来换去不知道该用什么，纠结到最后选了 Mist 主题。但又发现了一个问题，就是 Mist 主题里的 <code>&lt;h&gt;</code> 和 <code>&lt;p&gt;</code> 标签显示的前后文间距和其它三个主题不一样，不仔细看其实真的看不出来。不过既然被我发现了，如果不解决的话就浑身难受。利用 Chrome 的开发者工具可以查看标签元素的 CSS 属性，发现就是这两个标签的 margin 设置和另外三个主题不一样，这一点也不 consistent 啊。解决方案就是修改 Mist 主题样式文件，位于 <code>themes/next/source/css/_schemes/Mist/_base.styl</code>。其中有两行代码，将它们注释掉即可。</p>
+<h2 id="Mist-主题的-margin-与其它主题不一致"><a href="#Mist-主题的-margin-与其它主题不一致" class="headerlink" title="Mist 主题的 margin 与其它主题不一致"></a>Mist 主题的 margin 与其它主题不一致</h2><p>由于自己有一点轻微的强迫症，开始在几个主题间换来换去不知道该用什么，纠结到最后选了 Mist 主题。但又发现了一个问题，就是 Mist 主题里的 <code>&lt;h&gt;</code> 和 <code>&lt;p&gt;</code> 标签显示的前后文间距和其它三个主题不一样，不仔细看其实真的看不出来。不过既然被我发现了，如果不解决的话就浑身难受。利用 Chrome 的开发者工具可以查看标签元素的 CSS 属性，发现就是这两个标签的 margin 设置和另外三个主题不一样，这一点也不 consistent 啊。解决方案就是修改 Mist 主题中的样式文件，位于 <code>themes/next/source/css/_schemes/Mist/_base.styl</code>。其中有两行代码，将它们注释掉即可。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h1, h2, h3, h4, h5, h6 &#123; margin: 20px 0 10px; &#125;</span><br><span class="line">p &#123; margin: 0 0 25px 0; &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="NexT-内建文本居中标签的目录"><a href="#NexT-内建文本居中标签的目录" class="headerlink" title="NexT 内建文本居中标签的目录"></a>NexT 内建文本居中标签的目录</h2><p>NexT 提供了一个非常好看的内建标签，用来居中文本，很适合写个什么签名之类的，效果如下：</p>
 <blockquote class="blockquote-center">这个人很懒，什么也没留下</blockquote>
