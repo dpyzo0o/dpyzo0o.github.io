@@ -218,6 +218,7 @@ h6 {
   line-height: 1.5;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+h1,
 h2,
 h3,
 h4,
@@ -2676,4 +2677,58 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 14px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 14px rgba(202,203,204,0.5);
+}
+.footer-inner {
+  font-family: 'Comic Sans MS', sans-serif;
+  text-align: center;
+}
+.post-tags {
+  text-align: center !important;
+}
+.post-tags a {
+  transition: 0.2s ease-out;
+}
+.post-button {
+  margin-top: 30px;
+  text-align: center;
+}
+.post-button .btn {
+  display: inline-block;
+  color: #555;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 2px;
+  line-height: 2;
+  margin: 0 4px 8px 4px;
+  padding: 0 20px;
+  border: 2px solid #555;
+  text-decoration: none;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+.post-button a {
+  border-bottom: 1px solid #666;
+}
+.post-button a:hover {
+  background: #262a30;
+  color: #fff;
+}
+.logo-line-before {
+  width: 75%;
+}
+.logo-line-after {
+  width: 75%;
+}
+.posts-expand .post-body img {
+  padding: 0;
+  border: none;
 }

@@ -103,25 +103,27 @@
   <meta name="keywords" content="Hexo,VS Code," />
 
 
-<meta name="description" content="今天又折腾了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。">
+<meta name="description" content="今天又花了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。">
 <meta name="keywords" content="Hexo,VS Code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo配置过程中踩过的坑">
-<meta property="og:url" content="http://yoursite.com/2018/02/26/Hexo配置过程中踩过的坑/index.html">
-<meta property="og:site_name" content="dpyzo0o&#39;s Notes">
-<meta property="og:description" content="今天又折腾了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。">
+<meta property="og:title" content="折腾 Hexo 的主题配置">
+<meta property="og:url" content="http://yoursite.com/2018/02/26/hexo-configuration/index.html">
+<meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
+<meta property="og:description" content="今天又花了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/hexo-configuration.jpg">
 <meta property="og:updated_time" content="2018-02-26T20:06:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo配置过程中踩过的坑">
-<meta name="twitter:description" content="今天又折腾了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。">
+<meta name="twitter:title" content="折腾 Hexo 的主题配置">
+<meta name="twitter:description" content="今天又花了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。">
+<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/hexo-configuration.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/26/Hexo配置过程中踩过的坑/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/26/hexo-configuration/"/>
 
 
 
@@ -130,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>Hexo配置过程中踩过的坑 | dpyzo0o's Notes</title>
+  <title>折腾 Hexo 的主题配置 | dpyzo0o ♡ dpyz0o0</title>
   
 
 
@@ -188,7 +190,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">dpyzo0o's Notes</span>
+        <span class="site-title">dpyzo0o ♡ dpyz0o0</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -277,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/Hexo配置过程中踩过的坑/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/hexo-configuration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dpyzo0o">
@@ -286,7 +288,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="dpyzo0o's Notes">
+      <meta itemprop="name" content="dpyzo0o ♡ dpyz0o0">
     </span>
 
     
@@ -294,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo配置过程中踩过的坑</h1>
+          <h1 class="post-title" itemprop="name headline">折腾 Hexo 的主题配置</h1>
         
 
         <div class="post-meta">
@@ -383,7 +385,8 @@
       
 
       
-        <p>今天又折腾了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。</p>
+        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/hexo-configuration.jpg" alt="cover"></p>
+<p>今天又花了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。</p>
 <a id="more"></a>
 <h2 id="VS-Code-写-Mardown-出现隐藏字符"><a href="#VS-Code-写-Mardown-出现隐藏字符" class="headerlink" title="VS Code 写 Mardown 出现隐藏字符"></a>VS Code 写 Mardown 出现隐藏字符</h2><p>在写第一篇博文的时候，实际也是自己第一次用 Markdown 完整的写一篇文章，由于最近一直在使用 VS Code，貌似其对 Markdown 的支持也不错，就直接拿来用了。写的过程中确实也比较顺手，实时预览和同步滚动的功能都很不错，在这里推荐一波。在 Mac 上写完、上传、预览都没有什么问题，不过当我在一台 Windows 电脑上打开博客时，就发现文章里面莫名的出现了许多乱码的符号。然后我就在 Mac 上用 Sublime 打开 Markdown 文件查看了一下，找到了问题。出现乱码的地方有样式为”BS”的字符，只不过在 Mac 版 VS Code 里面并没有显示出来，将这些字符删除后 Windows 上就可以正常的显示了。百度了一下发现也有人碰到了这个问题，这个字符其实是 ASCII 码中退格符的 Unicode 表示法，在 Mac 版 VS Code 里切换中英文输入法的过程中产生。目前来看可能是 VS Code 或者 Mac 系统的一个 bug，解决方案是开启 VS Code 的这个选项：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Controls whether the editor should render control characters</span><br><span class="line">&quot;editor.renderControlCharacters&quot;: true</span><br></pre></td></tr></table></figure>
