@@ -2682,6 +2682,7 @@ hr {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 30px;
+  box-shadow: 0 0 14px rgba(202,203,204,0.5);
   -webkit-box-shadow: 0 0 14px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 14px rgba(202,203,204,0.5);
 }
