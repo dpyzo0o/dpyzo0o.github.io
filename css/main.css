@@ -2678,7 +2678,7 @@ hr {
     text-align: center;
   }
 }
-:not(.post-block .archive) .post {
+.post-block:not(.archive) {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 30px;
