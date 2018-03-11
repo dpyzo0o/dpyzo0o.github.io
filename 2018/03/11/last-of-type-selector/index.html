@@ -103,26 +103,23 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="刚开始接触 HTML/CSS 时，想必大家都被怎么样实现水平垂直居中给弄的头疼不已。其实用 CSS 实现居中没有想象中的那么难，只不过实现的方式有很多种，而每种方式都有它适合运用的场景，导致我们常常不知道什么时候该用什么方式。这篇文章就对不同情况下的居中方式做一个总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 中常用居中方式总结">
-<meta property="og:url" content="http://yoursite.com/2018/03/04/centering-css/index.html">
+<meta property="og:title" content="last-of-type 不作用于类选择器">
+<meta property="og:url" content="http://yoursite.com/2018/03/11/last-of-type-selector/index.html">
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
-<meta property="og:description" content="刚开始接触 HTML/CSS 时，想必大家都被怎么样实现水平垂直居中给弄的头疼不已。其实用 CSS 实现居中没有想象中的那么难，只不过实现的方式有很多种，而每种方式都有它适合运用的场景，导致我们常常不知道什么时候该用什么方式。这篇文章就对不同情况下的居中方式做一个总结。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/centering-css.jpg">
-<meta property="og:updated_time" content="2018-03-04T17:43:01.000Z">
+<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/last-of-type-selector.jpeg">
+<meta property="og:updated_time" content="2018-03-11T15:16:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS 中常用居中方式总结">
-<meta name="twitter:description" content="刚开始接触 HTML/CSS 时，想必大家都被怎么样实现水平垂直居中给弄的头疼不已。其实用 CSS 实现居中没有想象中的那么难，只不过实现的方式有很多种，而每种方式都有它适合运用的场景，导致我们常常不知道什么时候该用什么方式。这篇文章就对不同情况下的居中方式做一个总结。">
-<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/centering-css.jpg">
+<meta name="twitter:title" content="last-of-type 不作用于类选择器">
+<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/last-of-type-selector.jpeg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/04/centering-css/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/11/last-of-type-selector/"/>
 
 
 
@@ -131,7 +128,7 @@
     sidebar: "",
   };
 </script>
-  <title>CSS 中常用居中方式总结 | dpyzo0o ♡ dpyz0o0</title>
+  <title>last-of-type 不作用于类选择器 | dpyzo0o ♡ dpyz0o0</title>
   
 
 
@@ -278,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/04/centering-css/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/last-of-type-selector/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dpyzo0o">
@@ -295,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS 中常用居中方式总结</h1>
+          <h1 class="post-title" itemprop="name headline">last-of-type 不作用于类选择器</h1>
         
 
         <div class="post-meta">
@@ -307,7 +304,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T16:53:19+01:00">2018-03-04</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T15:21:43+01:00">2018-03-11</time>
             
 
             
@@ -360,7 +357,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">1.5k</span>
+                <span title="字数统计">448</span>
               
 
               
@@ -384,30 +381,20 @@
       
 
       
-        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/centering-css.jpg" alt="cover"></p>
-<p>刚开始接触 HTML/CSS 时，想必大家都被怎么样实现水平垂直居中给弄的头疼不已。其实用 CSS 实现居中没有想象中的那么难，只不过实现的方式有很多种，而每种方式都有它适合运用的场景，导致我们常常不知道什么时候该用什么方式。这篇文章就对不同情况下的居中方式做一个总结。</p>
+        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/last-of-type-selector.jpeg" alt="cover"></p>
 <a id="more"></a>
-<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><p>水平居中在 CSS 中相对比较简单，主要可以分为两种情形，<strong>内联元素</strong>和<strong>块级元素</strong>。</p>
-<h3 id="内联元素-inline-or-inline-elements"><a href="#内联元素-inline-or-inline-elements" class="headerlink" title="内联元素 (inline or inline-* elements)"></a>内联元素 (inline or inline-* elements)</h3><p>对于内联元素，通常我们将其置于一个块级的父元素中，然后给父元素加上 <code>text-align</code> 属性：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个方式对 <code>inline</code>、<code>inline-block</code>、<code>inline-table</code>、<code>inline-flex</code>都有效。</p>
-<h3 id="块级元素-block-level-element"><a href="#块级元素-block-level-element" class="headerlink" title="块级元素 (block level element)"></a>块级元素 (block level element)</h3><p>对于块级元素，我们需要给它设置左右 <code>margin-left</code> 和 <code>margin-right</code> 为 <code>auto</code>，前提是必须显式的设置它的 <code>width</code> 属性，通常简写为（上下 margin 可以随意设置）：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><p>垂直居中比水平居中稍麻烦一点，通常也可以分为<strong>内联元素</strong>和<strong>块级元素</strong>来处理。</p>
-<h3 id="内联元素-inline-or-inline-elements-1"><a href="#内联元素-inline-or-inline-elements-1" class="headerlink" title="内联元素 (inline or inline-* elements)"></a>内联元素 (inline or inline-* elements)</h3><p>对于只占一行的内联元素，我们可以设置它的上下 <code>padding</code> 一样来实现垂直居中：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果因为种种原因，设置 <code>padding</code> 不起效果的话，我们还可以通过设置 <code>line-height</code> 属性和 <code>height</code> 属性一样来实现居中：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于多行显示的内联元素，上述设置 <code>padding</code> 的方式通常也是可行的。其次，我们还可以利用 <code>vertical-align</code> 属性。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="块级元素-block-level-element-1"><a href="#块级元素-block-level-element-1" class="headerlink" title="块级元素 (block level element)"></a>块级元素 (block level element)</h3><p>对于已知高度的块级元素，可以这样实现：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">50px</span>; <span class="comment">/* account for padding and border if not using box-sizing: border-box; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>top: 50%</code> 首先将元素移至上边缘刚好处于垂直的中轴线上，然后设置 <code>margin-top</code> 为自身 <code>height</code> 的负一半，相当于将元素的 <code>content</code> 上移了一半，间接的达到了居中的效果。</p>
-<p>同理，对于未知高度的块级元素，我们可以利用 <code>transform</code> 属性来实现：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h2><ul>
-<li><a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="noopener">Centering in CSS: A Complete Guide</a></li>
-</ul>
+<p><code>last-of-type</code> 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type" target="_blank" rel="noopener">官方文档</a>），</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/zn8s2ta9/1/embedded/html,css,result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 <code>last-of-type</code> 时，该选择器并不起作用。让我们来看一个例子，</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/on98e32j/3/embedded/html,css,result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>可以看到，该选择器和类选择器一起使用时将会失效，只用直接作用于于标签元素上时才会生效。这个时候可以利用 <code>nth-of-type</code> 来代替。</p>
+<p>让我们再来看一遍官方文档是怎么描述这个选择器的，</p>
+<blockquote>
+<p>The <code>:last-of-type</code> CSS pseudo-class represents the last element of its type among a group of sibling elements.</p>
+</blockquote>
+<p>单单这句话并不能得出不作用于类选择器的结论，我们只能猜测，类名可能会破坏 sibling 的结构导致该选择器不能正确的执行。</p>
 
       
     </div>
@@ -435,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/26/hexo-configuration/" rel="next" title="折腾 Hexo 的主题配置">
-                <i class="fa fa-chevron-left"></i> 折腾 Hexo 的主题配置
+              <a href="/2018/03/04/centering-css/" rel="next" title="CSS 中常用居中方式总结">
+                <i class="fa fa-chevron-left"></i> CSS 中常用居中方式总结
               </a>
             
           </div>
@@ -444,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/11/last-of-type-selector/" rel="prev" title="last-of-type 不作用于类选择器">
-                last-of-type 不作用于类选择器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,17 +479,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -601,22 +575,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#水平居中"><span class="nav-number">1.</span> <span class="nav-text">水平居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素-inline-or-inline-elements"><span class="nav-number">1.1.</span> <span class="nav-text">内联元素 (inline or inline-* elements)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级元素-block-level-element"><span class="nav-number">1.2.</span> <span class="nav-text">块级元素 (block level element)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垂直居中"><span class="nav-number">2.</span> <span class="nav-text">垂直居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素-inline-or-inline-elements-1"><span class="nav-number">2.1.</span> <span class="nav-text">内联元素 (inline or inline-* elements)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级元素-block-level-element-1"><span class="nav-number">2.2.</span> <span class="nav-text">块级元素 (block level element)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关阅读"><span class="nav-number">3.</span> <span class="nav-text">相关阅读</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
