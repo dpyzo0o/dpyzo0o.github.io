@@ -100,26 +100,27 @@
 
 
   
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="webpack," />
 
 
-<meta name="description" content="这个人很懒，什么也没留下">
-<meta property="og:type" content="website">
-<meta property="og:title" content="dpyzo0o ♡ dpyz0o0">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack4 build 后导致函数 constructor.name 改变">
+<meta property="og:url" content="http://yoursite.com/2018/06/15/webpack-constructor-name-problem/index.html">
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
-<meta property="og:description" content="这个人很懒，什么也没留下">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg">
+<meta property="og:updated_time" content="2018-06-15T13:21:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dpyzo0o ♡ dpyz0o0">
-<meta name="twitter:description" content="这个人很懒，什么也没留下">
+<meta name="twitter:title" content="Webpack4 build 后导致函数 constructor.name 改变">
+<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/15/webpack-constructor-name-problem/"/>
 
 
 
@@ -128,7 +129,7 @@
     sidebar: "",
   };
 </script>
-  <title>dpyzo0o ♡ dpyz0o0</title>
+  <title>Webpack4 build 后导致函数 constructor.name 改变 | dpyzo0o ♡ dpyz0o0</title>
   
 
 
@@ -175,8 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,9 +259,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/hexo-configuration/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/webpack-constructor-name-problem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dpyzo0o">
@@ -293,9 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/26/hexo-configuration/" itemprop="url">折腾 Hexo 的主题配置</a></h1>
+          <h1 class="post-title" itemprop="name headline">Webpack4 build 后导致函数 constructor.name 改变</h1>
         
 
         <div class="post-meta">
@@ -307,7 +305,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T21:06:48+01:00">2018-02-26</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T14:43:06+02:00">2018-06-15</time>
             
 
             
@@ -330,7 +328,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/博客/" itemprop="url" rel="index"><span itemprop="name">博客</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Issues/" itemprop="url" rel="index"><span itemprop="name">Issues</span></a></span>
 
                 
                 
@@ -360,7 +358,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">2.6k</span>
+                <span title="字数统计">941</span>
               
 
               
@@ -384,17 +382,16 @@
       
 
       
-        
-          <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/hexo-configuration.jpg" alt="cover"></p>
-<p>今天又花了一天在 Hexo 的主题配置上，期间碰到的一些问题在此记录一下。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/26/hexo-configuration/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg" alt="cover"></p>
+<a id="more"></a>
+<p>最近忙着在写百度前端学院的任务，进入到 OOP 相关内容后感觉任务难度明显加大了，需要大量的阅读才能掌握一些比较难理解的概念。尤其是开始接触一些设计模式，简直看的我云里雾里。很多模式你就算看明白了原理，也不知道在自己的项目中怎么运用，只能依葫芦画瓢。吐槽结束。。还是来谈谈昨晚遇到的 bug 吧。。</p>
+<p>我需要在代码里根据不同构造函数创建的实例来进行不同的操作，所以我就想到用 prototype 的 constructor.name 来进行一个 switch 判断。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (<span class="built_in">Object</span>.getPrototypeOf(instance).constructor.name) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'AAA'</span>:</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'BBB'</span>:</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在使用 webpack-dev-server 进行开发的时候一切正常，但是当我用 proudction mode 进行打包后程序就一直报错，说明是在打包过程中导致的 bug。通过 debug 后发现上面 switch 判断的所有 case 后面的代码都没有被执行，也就是说在打包后创建 instance 的构造函数名被改变了。然后我就到打包后的代码里看了一下，原来是 webpack 在打包过程中对代码进行了 uglify。所有的变量名、函数名都变成了 o、u、s 这样的字母。同时构造函数的 constructor.name 也被改变了，这就解释了上述代码出现 bug 的原因。</p>
+<p>知道原因后，解决办法就很简单了。第一种办法就是不让 webpack 对代码进行 uglify。webpack4 默认会在 development mode 里面不进行 uglify，而在 production mode 里面进行 uglify。可以通过如下设置进行关闭：</p>
+<figure class="highlight javascript"><figcaption><span>webpack.config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">optimization: &#123;</span><br><span class="line">  minimize: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种办法就是避免直接使用 constructor.name 来进行条件判断，方法有很多，比如可以通过增加一个实例属性 type 来进行判断。</p>
+
       
     </div>
 
@@ -412,183 +409,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dpyzo0o">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="dpyzo0o ♡ dpyz0o0">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/25/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T20:00:00+01:00">2018-02-25</time>
-            
-
-            
-            
-              
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/博客/" itemprop="url" rel="index"><span itemprop="name">博客</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <span class="post-symbolscount">
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">1.7k</span>
-              
-
-              
-
-              
-            </span>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/hello-world.png" alt="cover"></p>
-<p>开始准备写博客的时候，网上找了很多写博客的平台，比如博客园、CSDN、简书、SegmentFault。每一个都注册账号上去试了试，其实各有各的优缺点。博客园和 CSDN 很适合作为技术类的博客，但是这两个的界面太丑了，而且还有广告，简直不能忍。简书和 SegmentFault 的界面很清爽，而且对 Markdown 的支持也很好。本来准备就用其中一个来写了，后来无意间发现了 Hexo + Github Pages 的组合，大致了解了一下，很有 geek 的感觉。又发现很多优秀的前端开发都用了 Github Pages 来搭博客，就随波大流，决定用它了。其实搭建的过程并不复杂，网上也有很多教程供参考，这篇文章就来简单的记录下这个过程。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/25/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/vscode-nvm-problem/" rel="next" title="NVM is not compatible with the npm config "prefix" option 解决方案">
+                <i class="fa fa-chevron-left"></i> NVM is not compatible with the npm config "prefix" option 解决方案
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -598,18 +448,19 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -886,6 +737,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
 
   
 
