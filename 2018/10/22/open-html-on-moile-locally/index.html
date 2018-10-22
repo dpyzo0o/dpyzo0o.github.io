@@ -100,27 +100,27 @@
 
 
   
-  <meta name="keywords" content="webpack," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="keywords" content="webpack">
+<meta name="description" content="最近碰到个小需求，需要改一个手机上显示的 html 文件，但是每次修改需要和后端的同学说一下更新一下数据库再在测试机上测试，效率非常低下。其实完全可以直接在手机上打开 html 文件来查看效果。非常简单，步骤如下：  下载 MAMP，将 index.html 文件拖入 htdocs 文件夹 设置端口（eg. 8080），开启本地 server terminal 里输入 ifconfig 查看本机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack4 build 后导致函数 constructor.name 改变">
-<meta property="og:url" content="http://yoursite.com/2018/06/15/webpack-constructor-name-problem/index.html">
+<meta property="og:title" content="手机端查看 HTML 文件">
+<meta property="og:url" content="http://yoursite.com/2018/10/22/open-html-on-moile-locally/index.html">
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
+<meta property="og:description" content="最近碰到个小需求，需要改一个手机上显示的 html 文件，但是每次修改需要和后端的同学说一下更新一下数据库再在测试机上测试，效率非常低下。其实完全可以直接在手机上打开 html 文件来查看效果。非常简单，步骤如下：  下载 MAMP，将 index.html 文件拖入 htdocs 文件夹 设置端口（eg. 8080），开启本地 server terminal 里输入 ifconfig 查看本机">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg">
-<meta property="og:updated_time" content="2018-06-15T13:21:33.000Z">
+<meta property="og:updated_time" content="2018-10-22T03:18:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack4 build 后导致函数 constructor.name 改变">
-<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg">
+<meta name="twitter:title" content="手机端查看 HTML 文件">
+<meta name="twitter:description" content="最近碰到个小需求，需要改一个手机上显示的 html 文件，但是每次修改需要和后端的同学说一下更新一下数据库再在测试机上测试，效率非常低下。其实完全可以直接在手机上打开 html 文件来查看效果。非常简单，步骤如下：  下载 MAMP，将 index.html 文件拖入 htdocs 文件夹 设置端口（eg. 8080），开启本地 server terminal 里输入 ifconfig 查看本机">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/15/webpack-constructor-name-problem/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/22/open-html-on-moile-locally/"/>
 
 
 
@@ -129,7 +129,7 @@
     sidebar: "",
   };
 </script>
-  <title>Webpack4 build 后导致函数 constructor.name 改变 | dpyzo0o ♡ dpyz0o0</title>
+  <title>手机端查看 HTML 文件 | dpyzo0o ♡ dpyz0o0</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/webpack-constructor-name-problem/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/open-html-on-moile-locally/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dpyzo0o">
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Webpack4 build 后导致函数 constructor.name 改变</h1>
+          <h1 class="post-title" itemprop="name headline">手机端查看 HTML 文件</h1>
         
 
         <div class="post-meta">
@@ -305,7 +305,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T14:43:06+08:00">2018-06-15</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-22T11:04:02+08:00">2018-10-22</time>
             
 
             
@@ -358,7 +358,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">941</span>
+                <span title="字数统计">282</span>
               
 
               
@@ -382,15 +382,13 @@
       
 
       
-        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg" alt="cover"></p>
-<a id="more"></a>
-<p>最近忙着在写百度前端学院的任务，进入到 OOP 相关内容后感觉任务难度明显加大了，需要大量的阅读才能掌握一些比较难理解的概念。尤其是开始接触一些设计模式，简直看的我云里雾里。很多模式你就算看明白了原理，也不知道在自己的项目中怎么运用，只能依葫芦画瓢。吐槽结束。。还是来谈谈昨晚遇到的 bug 吧。。</p>
-<p>我需要在代码里根据不同构造函数创建的实例来进行不同的操作，所以我就想到用 prototype 的 constructor.name 来进行一个 switch 判断。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (<span class="built_in">Object</span>.getPrototypeOf(instance).constructor.name) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'AAA'</span>:</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'BBB'</span>:</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在使用 webpack-dev-server 进行开发的时候一切正常，但是当我用 proudction mode 进行打包后程序就一直报错，说明是在打包过程中导致的 bug。通过 debug 后发现上面 switch 判断的所有 case 后面的代码都没有被执行，也就是说在打包后创建 instance 的构造函数名被改变了。然后我就到打包后的代码里看了一下，原来是 webpack 在打包过程中对代码进行了 uglify。所有的变量名、函数名都变成了 o、u、s 这样的字母。同时构造函数的 constructor.name 也被改变了，这就解释了上述代码出现 bug 的原因。</p>
-<p>知道原因后，解决办法就很简单了。第一种办法就是不让 webpack 对代码进行 uglify。webpack4 默认会在 development mode 里面不进行 uglify，而在 production mode 里面进行 uglify。可以通过如下设置进行关闭：</p>
-<figure class="highlight javascript"><figcaption><span>webpack.config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">optimization: &#123;</span><br><span class="line">  minimize: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第二种办法就是避免直接使用 constructor.name 来进行条件判断，方法有很多，比如可以通过增加一个实例属性 type 来进行判断。</p>
+        <p>最近碰到个小需求，需要改一个手机上显示的 html 文件，但是每次修改需要和后端的同学说一下更新一下数据库再在测试机上测试，效率非常低下。其实完全可以直接在手机上打开 html 文件来查看效果。非常简单，步骤如下：</p>
+<ul>
+<li>下载 MAMP，将 index.html 文件拖入 htdocs 文件夹</li>
+<li>设置端口（eg. 8080），开启本地 server</li>
+<li>terminal 里输入 ifconfig 查看本机 ip 地址（eg. 10.100.10.100）</li>
+<li>手机端接入和电脑一样的 WIFI 热点，浏览器打开 10.100.10.100/8080/index.html</li>
+</ul>
 
       
     </div>
@@ -409,12 +407,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/webpack/" rel="tag"># webpack</a>
-          
-        </div>
-      
 
       
       
@@ -424,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/17/vscode-nvm-problem/" rel="next" title="NVM is not compatible with the npm config "prefix" option 解决方案">
-                <i class="fa fa-chevron-left"></i> NVM is not compatible with the npm config "prefix" option 解决方案
+              <a href="/2018/06/15/webpack-constructor-name-problem/" rel="next" title="Webpack4 build 后导致函数 constructor.name 改变">
+                <i class="fa fa-chevron-left"></i> Webpack4 build 后导致函数 constructor.name 改变
               </a>
             
           </div>
@@ -433,10 +425,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/22/open-html-on-moile-locally/" rel="prev" title="手机端查看 HTML 文件">
-                手机端查看 HTML 文件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
