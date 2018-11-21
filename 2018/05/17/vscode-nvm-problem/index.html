@@ -103,17 +103,18 @@
   <meta name="keywords" content="vscode,nvm," />
 
 
+<meta name="description" content="最近碰到一个很恼人的 warning，每次打开 vscode 的 integrated terminal， 都会出现下面这个警告 12nvm is not compatible with the npm config &quot;prefix&quot; option: currently set to &quot;/usr/local&quot;Run `npm config delete prefix` or `nvm use --">
 <meta name="keywords" content="vscode,nvm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NVM is not compatible with the npm config &quot;prefix&quot; option 解决方案">
 <meta property="og:url" content="http://yoursite.com/2018/05/17/vscode-nvm-problem/index.html">
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
+<meta property="og:description" content="最近碰到一个很恼人的 warning，每次打开 vscode 的 integrated terminal， 都会出现下面这个警告 12nvm is not compatible with the npm config &quot;prefix&quot; option: currently set to &quot;/usr/local&quot;Run `npm config delete prefix` or `nvm use --">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/vscode-nvm-problem.jpg">
-<meta property="og:updated_time" content="2018-05-17T07:51:24.000Z">
+<meta property="og:updated_time" content="2018-11-21T09:09:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NVM is not compatible with the npm config &quot;prefix&quot; option 解决方案">
-<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/vscode-nvm-problem.jpg">
+<meta name="twitter:description" content="最近碰到一个很恼人的 warning，每次打开 vscode 的 integrated terminal， 都会出现下面这个警告 12nvm is not compatible with the npm config &quot;prefix&quot; option: currently set to &quot;/usr/local&quot;Run `npm config delete prefix` or `nvm use --">
 
 
 
@@ -311,8 +312,22 @@
             
             
               
+                
+              
             
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-21T17:09:15+08:00">2018-11-21</time>
             
           </span>
 
@@ -382,9 +397,7 @@
       
 
       
-        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/vscode-nvm-problem.jpg" alt="cover"></p>
-<a id="more"></a>
-<p>最近碰到一个很恼人的 warning，每次打开 vscode 的 integrated terminal， 都会出现下面这个警告</p>
+        <p>最近碰到一个很恼人的 warning，每次打开 vscode 的 integrated terminal， 都会出现下面这个警告</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm is not compatible with the npm config <span class="string">"prefix"</span> option: currently <span class="built_in">set</span> to <span class="string">"/usr/local"</span></span><br><span class="line">Run `npm config delete prefix` or `nvm use --delete-prefix v5.7.1 --silent` to <span class="built_in">unset</span> it.</span><br></pre></td></tr></table></figure>
 <p>之前的 node 是从官网通过 pkg 安装的，后来了解到使用 nvm 来管理不同的 node 版本很方便，于是又用 nvm 安装了一个 LTS 版本的 node，安装完成后 vscode 就出现了这个警告。Google 上搜了搜，好像蛮多人碰到这个状况的，但是所有方法我都试了一遍，没一个成功的。。不过大概知道了肯定和原来版本的 node 有关系，于是就想到把原来通过 pkg 安装的 node 删掉。结果真的成功了，如果你也碰到了类似的状况，可以通过下面的代码来清除系统版本的 node。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /usr/<span class="built_in">local</span>/lib/node /usr/<span class="built_in">local</span>/lib/node_modules /var/db/receipts/org.nodejs.*</span><br><span class="line">sudo rm -rf /usr/<span class="built_in">local</span>/include/node /Users/<span class="variable">$USER</span>/.npm</span><br><span class="line">sudo rm /usr/<span class="built_in">local</span>/bin/node</span><br><span class="line">sudo rm /usr/<span class="built_in">local</span>/bin/npm</span><br><span class="line">sudo rm /usr/<span class="built_in">local</span>/share/man/man1/node.1</span><br></pre></td></tr></table></figure>

@@ -110,12 +110,10 @@
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
 <meta property="og:description" content="slice() 和 splice() 算是在 JS 数组操作中最常用到的方法了，但是由于它们的名字很像，用法上也有相似的地方，对于初学者来说很容易就搞混。经过几次用错之后，在此记录一下，避免以后再犯相同的错误。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/js-splice-slice.jpg">
-<meta property="og:updated_time" content="2018-03-18T14:08:29.000Z">
+<meta property="og:updated_time" content="2018-11-21T09:08:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="slice() 与 splice() 方法总结">
 <meta name="twitter:description" content="slice() 和 splice() 算是在 JS 数组操作中最常用到的方法了，但是由于它们的名字很像，用法上也有相似的地方，对于初学者来说很容易就搞混。经过几次用错之后，在此记录一下，避免以后再犯相同的错误。">
-<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/js-splice-slice.jpg">
 
 
 
@@ -313,8 +311,22 @@
             
             
               
+                
+              
             
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-21T17:08:51+08:00">2018-11-21</time>
             
           </span>
 
@@ -384,8 +396,7 @@
       
 
       
-        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/js-splice-slice.jpg" alt="cover"></p>
-<p><code>slice()</code> 和 <code>splice()</code> 算是在 JS 数组操作中最常用到的方法了，但是由于它们的名字很像，用法上也有相似的地方，对于初学者来说很容易就搞混。经过几次用错之后，在此记录一下，避免以后再犯相同的错误。</p>
+        <p><code>slice()</code> 和 <code>splice()</code> 算是在 JS 数组操作中最常用到的方法了，但是由于它们的名字很像，用法上也有相似的地方，对于初学者来说很容易就搞混。经过几次用错之后，在此记录一下，避免以后再犯相同的错误。</p>
 <a id="more"></a>
 <h2 id="Array-slice"><a href="#Array-slice" class="headerlink" title="Array.slice()"></a>Array.slice()</h2><p><code>slice()</code> 方法是对一个数组进行<strong>浅拷贝</strong>到一个新的数组对象，并不改变原来的数组。该方法接收两个参数，<code>begin</code> 和 <code>end</code>，分别表示提取数组的起始和结束索引（begin包含，end不包含）。需要注意的是，这两个参数都不是必须的，如果省略，默认值分别为 <code>0</code> 和 <code>array.length</code>。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruits = [<span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'peach'</span>, <span class="string">'orange'</span>, <span class="string">'watermelon'</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fruits.slice(<span class="number">1</span>, <span class="number">3</span>));</span><br><span class="line"><span class="comment">// output: Array ['banana', 'peach']</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fruits.slice(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// output: Array ['peach', 'orange', 'watermelon']</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fruits.slice());</span><br><span class="line"><span class="comment">// output: Array ['apple', 'banana', 'peach', 'orange', 'watermelon']</span></span><br></pre></td></tr></table></figure>

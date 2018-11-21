@@ -103,16 +103,17 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
+<meta name="description" content="last-of-type 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自官方文档），   但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 last-of-type 时，该选择器并不起作用。让我们来看一个例子，   可以看到，该选择器和类选择器一起使用时将会失效">
 <meta property="og:type" content="article">
 <meta property="og:title" content="last-of-type 不作用于类选择器">
 <meta property="og:url" content="http://yoursite.com/2018/03/11/last-of-type-selector/index.html">
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
+<meta property="og:description" content="last-of-type 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自官方文档），   但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 last-of-type 时，该选择器并不起作用。让我们来看一个例子，   可以看到，该选择器和类选择器一起使用时将会失效">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/last-of-type-selector.jpeg">
-<meta property="og:updated_time" content="2018-03-11T15:16:38.000Z">
+<meta property="og:updated_time" content="2018-11-21T09:08:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="last-of-type 不作用于类选择器">
-<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/last-of-type-selector.jpeg">
+<meta name="twitter:description" content="last-of-type 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自官方文档），   但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 last-of-type 时，该选择器并不起作用。让我们来看一个例子，   可以看到，该选择器和类选择器一起使用时将会失效">
 
 
 
@@ -310,8 +311,22 @@
             
             
               
+                
+              
             
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-21T17:08:56+08:00">2018-11-21</time>
             
           </span>
 
@@ -357,7 +372,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">448</span>
+                <span title="字数统计">446</span>
               
 
               
@@ -381,9 +396,7 @@
       
 
       
-        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/last-of-type-selector.jpeg" alt="cover"></p>
-<a id="more"></a>
-<p><code>last-of-type</code> 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type" target="_blank" rel="noopener">官方文档</a>），</p>
+        <p><code>last-of-type</code> 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type" target="_blank" rel="noopener">官方文档</a>），</p>
 <iframe width="100%" height="300" src="//jsfiddle.net/zn8s2ta9/1/embedded/html,css,result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 <p>但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 <code>last-of-type</code> 时，该选择器并不起作用。让我们来看一个例子，</p>

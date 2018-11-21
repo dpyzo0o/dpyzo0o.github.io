@@ -103,17 +103,18 @@
   <meta name="keywords" content="webpack," />
 
 
+<meta name="description" content="最近忙着在写百度前端学院的任务，进入到 OOP 相关内容后感觉任务难度明显加大了，需要大量的阅读才能掌握一些比较难理解的概念。尤其是开始接触一些设计模式，简直看的我云里雾里。很多模式你就算看明白了原理，也不知道在自己的项目中怎么运用，只能依葫芦画瓢。吐槽结束。。还是来谈谈昨晚遇到的 bug 吧。。 我需要在代码里根据不同构造函数创建的实例来进行不同的操作，所以我就想到用 prototype 的 c">
 <meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack4 build 后导致函数 constructor.name 改变">
 <meta property="og:url" content="http://yoursite.com/2018/06/15/webpack-constructor-name-problem/index.html">
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
+<meta property="og:description" content="最近忙着在写百度前端学院的任务，进入到 OOP 相关内容后感觉任务难度明显加大了，需要大量的阅读才能掌握一些比较难理解的概念。尤其是开始接触一些设计模式，简直看的我云里雾里。很多模式你就算看明白了原理，也不知道在自己的项目中怎么运用，只能依葫芦画瓢。吐槽结束。。还是来谈谈昨晚遇到的 bug 吧。。 我需要在代码里根据不同构造函数创建的实例来进行不同的操作，所以我就想到用 prototype 的 c">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg">
-<meta property="og:updated_time" content="2018-06-15T13:21:33.000Z">
+<meta property="og:updated_time" content="2018-11-21T09:09:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack4 build 后导致函数 constructor.name 改变">
-<meta name="twitter:image" content="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg">
+<meta name="twitter:description" content="最近忙着在写百度前端学院的任务，进入到 OOP 相关内容后感觉任务难度明显加大了，需要大量的阅读才能掌握一些比较难理解的概念。尤其是开始接触一些设计模式，简直看的我云里雾里。很多模式你就算看明白了原理，也不知道在自己的项目中怎么运用，只能依葫芦画瓢。吐槽结束。。还是来谈谈昨晚遇到的 bug 吧。。 我需要在代码里根据不同构造函数创建的实例来进行不同的操作，所以我就想到用 prototype 的 c">
 
 
 
@@ -311,8 +312,22 @@
             
             
               
+                
+              
             
 
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-11-21T17:09:20+08:00">2018-11-21</time>
             
           </span>
 
@@ -358,7 +373,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">941</span>
+                <span title="字数统计">939</span>
               
 
               
@@ -382,9 +397,7 @@
       
 
       
-        <p><img src="http://p4sze7ut1.bkt.clouddn.com/cover/webpack-constructor-name-problem.jpg" alt="cover"></p>
-<a id="more"></a>
-<p>最近忙着在写百度前端学院的任务，进入到 OOP 相关内容后感觉任务难度明显加大了，需要大量的阅读才能掌握一些比较难理解的概念。尤其是开始接触一些设计模式，简直看的我云里雾里。很多模式你就算看明白了原理，也不知道在自己的项目中怎么运用，只能依葫芦画瓢。吐槽结束。。还是来谈谈昨晚遇到的 bug 吧。。</p>
+        <p>最近忙着在写百度前端学院的任务，进入到 OOP 相关内容后感觉任务难度明显加大了，需要大量的阅读才能掌握一些比较难理解的概念。尤其是开始接触一些设计模式，简直看的我云里雾里。很多模式你就算看明白了原理，也不知道在自己的项目中怎么运用，只能依葫芦画瓢。吐槽结束。。还是来谈谈昨晚遇到的 bug 吧。。</p>
 <p>我需要在代码里根据不同构造函数创建的实例来进行不同的操作，所以我就想到用 prototype 的 constructor.name 来进行一个 switch 判断。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (<span class="built_in">Object</span>.getPrototypeOf(instance).constructor.name) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'AAA'</span>:</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'BBB'</span>:</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在使用 webpack-dev-server 进行开发的时候一切正常，但是当我用 proudction mode 进行打包后程序就一直报错，说明是在打包过程中导致的 bug。通过 debug 后发现上面 switch 判断的所有 case 后面的代码都没有被执行，也就是说在打包后创建 instance 的构造函数名被改变了。然后我就到打包后的代码里看了一下，原来是 webpack 在打包过程中对代码进行了 uglify。所有的变量名、函数名都变成了 o、u、s 这样的字母。同时构造函数的 constructor.name 也被改变了，这就解释了上述代码出现 bug 的原因。</p>
