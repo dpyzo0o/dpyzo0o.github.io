@@ -100,21 +100,20 @@
 
 
   
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="这个人很懒，什么也没留下">
-<meta name="keywords" content="git">
+<meta name="description" content="在我们使用 git 的时候，经常需要忽略一些文件夹，比如 node_modules，只需要将 node_modules/ 加到 .gitignore 文件里就行了。但是如果说你想忽略的文件夹里面，有一些文件是你需要 git 来追踪的呢？当然这也是可以做到的，你只需要将你想要 git 追踪的文件或文件夹标记出来，比如像下面这么写 123folderToIgnore/*!folderToIgnore/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git-ignore-folder">
+<meta property="og:title" content=".gitignore 忽略文件夹并保留特定的文件">
 <meta property="og:url" content="http://yoursite.com/2018/11/21/git-ignore-folder/index.html">
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
-<meta property="og:description" content="这个人很懒，什么也没留下">
+<meta property="og:description" content="在我们使用 git 的时候，经常需要忽略一些文件夹，比如 node_modules，只需要将 node_modules/ 加到 .gitignore 文件里就行了。但是如果说你想忽略的文件夹里面，有一些文件是你需要 git 来追踪的呢？当然这也是可以做到的，你只需要将你想要 git 追踪的文件或文件夹标记出来，比如像下面这么写 123folderToIgnore/*!folderToIgnore/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-21T09:20:32.000Z">
+<meta property="og:updated_time" content="2018-11-21T10:00:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git-ignore-folder">
-<meta name="twitter:description" content="这个人很懒，什么也没留下">
+<meta name="twitter:title" content=".gitignore 忽略文件夹并保留特定的文件">
+<meta name="twitter:description" content="在我们使用 git 的时候，经常需要忽略一些文件夹，比如 node_modules，只需要将 node_modules/ 加到 .gitignore 文件里就行了。但是如果说你想忽略的文件夹里面，有一些文件是你需要 git 来追踪的呢？当然这也是可以做到的，你只需要将你想要 git 追踪的文件或文件夹标记出来，比如像下面这么写 123folderToIgnore/*!folderToIgnore/">
 
 
 
@@ -130,7 +129,7 @@
     sidebar: "",
   };
 </script>
-  <title>git-ignore-folder | dpyzo0o ♡ dpyz0o0</title>
+  <title>.gitignore 忽略文件夹并保留特定的文件 | dpyzo0o ♡ dpyz0o0</title>
   
 
 
@@ -294,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git-ignore-folder</h1>
+          <h1 class="post-title" itemprop="name headline">.gitignore 忽略文件夹并保留特定的文件</h1>
         
 
         <div class="post-meta">
@@ -357,7 +356,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">0</span>
+                <span title="字数统计">548</span>
               
 
               
@@ -381,7 +380,14 @@
       
 
       
-        
+        <p>在我们使用 git 的时候，经常需要忽略一些文件夹，比如 <code>node_modules</code>，只需要将 <code>node_modules/</code> 加到 <code>.gitignore</code> 文件里就行了。但是如果说你想忽略的文件夹里面，有一些文件是你需要 git 来追踪的呢？当然这也是可以做到的，你只需要将你想要 git 追踪的文件或文件夹标记出来，比如像下面这么写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">folderToIgnore/*</span><br><span class="line">!folderToIgnore/fileToKeep.js</span><br><span class="line">!folderToIgnore/subFolderToKeep/</span><br></pre></td></tr></table></figure>
+<p>这里需要注意的是，需要忽略的文件夹后面这个 <code>*</code> 一定要加上，因为</p>
+<ul>
+<li><code>folderToIgnore/</code> 会排除掉这个文件夹以及文件夹内的所有内容，并且告诉 git 不再处理这个文件夹相关的任何命令</li>
+<li><code>folderToIgnore/*</code> 排除的是这个文件夹内的所有内容，但和 <code>folderToIgnore</code> 这个文件夹没有关系。虽然在行为上和上面的写法实际是一样的，就是整个文件夹都不会被追踪，但这是因为 git 本身不追踪空文件夹导致的。当我们想要告诉 git 去追踪某些特定的文件时，这种写法就起作用了。因为执行 <code>folderToIgnore/*</code> 后，git 还是会继续处理这个文件夹的其他命令（如果有的话）</li>
+</ul>
+
       
     </div>
 
@@ -398,12 +404,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/git/" rel="tag"># git</a>
-          
-        </div>
       
 
       
@@ -553,7 +553,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -621,7 +621,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">24k</span>
+    <span title="站点总字数">25k</span>
   
 
   
