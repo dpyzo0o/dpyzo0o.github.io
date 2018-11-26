@@ -103,24 +103,24 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="last-of-type 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自官方文档），   但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 last-of-type 时，该选择器并不起作用。让我们来看一个例子，   可以看到，该选择器和类选择器一起使用时将会失效">
+<meta name="description" content="当我们在设计 API 的时候，通常都需要确定 CRUD 操作（Create-增加，Read/Retrieve-读取查询，Update-更新，Delete-删除）中要用到的 http 方法。一般来说，选取方式都是固定的：  Create - POST Read/Retrieve - GET Update - PUT/PATCH Delete - DELETE  看到上面的这个映射关系，如果你说 PU">
 <meta property="og:type" content="article">
-<meta property="og:title" content="last-of-type 不作用于类选择器">
-<meta property="og:url" content="http://yoursite.com/2018/03/11/last-of-type-selector/index.html">
+<meta property="og:title" content="设计 RESTful API - PUT vs PATCH （译）">
+<meta property="og:url" content="http://yoursite.com/2018/11/26/http-method-put-patch/index.html">
 <meta property="og:site_name" content="dpyzo0o ♡ dpyz0o0">
-<meta property="og:description" content="last-of-type 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自官方文档），   但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 last-of-type 时，该选择器并不起作用。让我们来看一个例子，   可以看到，该选择器和类选择器一起使用时将会失效">
+<meta property="og:description" content="当我们在设计 API 的时候，通常都需要确定 CRUD 操作（Create-增加，Read/Retrieve-读取查询，Update-更新，Delete-删除）中要用到的 http 方法。一般来说，选取方式都是固定的：  Create - POST Read/Retrieve - GET Update - PUT/PATCH Delete - DELETE  看到上面的这个映射关系，如果你说 PU">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-21T09:08:56.000Z">
+<meta property="og:updated_time" content="2018-11-26T06:41:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="last-of-type 不作用于类选择器">
-<meta name="twitter:description" content="last-of-type 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自官方文档），   但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 last-of-type 时，该选择器并不起作用。让我们来看一个例子，   可以看到，该选择器和类选择器一起使用时将会失效">
+<meta name="twitter:title" content="设计 RESTful API - PUT vs PATCH （译）">
+<meta name="twitter:description" content="当我们在设计 API 的时候，通常都需要确定 CRUD 操作（Create-增加，Read/Retrieve-读取查询，Update-更新，Delete-删除）中要用到的 http 方法。一般来说，选取方式都是固定的：  Create - POST Read/Retrieve - GET Update - PUT/PATCH Delete - DELETE  看到上面的这个映射关系，如果你说 PU">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/11/last-of-type-selector/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/26/http-method-put-patch/"/>
 
 
 
@@ -129,7 +129,7 @@
     sidebar: "",
   };
 </script>
-  <title>last-of-type 不作用于类选择器 | dpyzo0o ♡ dpyz0o0</title>
+  <title>设计 RESTful API - PUT vs PATCH （译） | dpyzo0o ♡ dpyz0o0</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/last-of-type-selector/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/http-method-put-patch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dpyzo0o">
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">last-of-type 不作用于类选择器</h1>
+          <h1 class="post-title" itemprop="name headline">设计 RESTful API - PUT vs PATCH （译）</h1>
         
 
         <div class="post-meta">
@@ -305,7 +305,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T15:21:43+08:00">2018-03-11</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-26T10:31:40+08:00">2018-11-26</time>
             
 
             
@@ -326,7 +326,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Http/" itemprop="url" rel="index"><span itemprop="name">Http</span></a></span>
 
                 
                 
@@ -356,7 +356,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">446</span>
+                <span title="字数统计">2.2k</span>
               
 
               
@@ -380,18 +380,32 @@
       
 
       
-        <p><code>last-of-type</code> 是 CSS3 中新加入的一种伪类选择器，用于匹配属于其父元素的特定类型的最后一个子元素的每个元素，对于定位多级嵌套的 HTML 标签尤其有用。比如下面这个例子（摘自<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type" target="_blank" rel="noopener">官方文档</a>），</p>
-<iframe width="100%" height="300" src="//jsfiddle.net/zn8s2ta9/1/embedded/html,css,result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-<p>但是我在使用的过程中，还是踩到了一个坑。就是当我试图在类选择器上使用 <code>last-of-type</code> 时，该选择器并不起作用。让我们来看一个例子，</p>
-<iframe width="100%" height="300" src="//jsfiddle.net/on98e32j/3/embedded/html,css,result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-<p>可以看到，该选择器和类选择器一起使用时将会失效，只用直接作用于于标签元素上时才会生效。这个时候可以利用 <code>nth-of-type</code> 来代替。</p>
-<p>让我们再来看一遍官方文档是怎么描述这个选择器的，</p>
+        <p>当我们在设计 API 的时候，通常都需要确定 CRUD 操作（Create-增加，Read/Retrieve-读取查询，Update-更新，Delete-删除）中要用到的 http 方法。一般来说，选取方式都是固定的：</p>
+<ul>
+<li>Create - POST</li>
+<li>Read/Retrieve - GET</li>
+<li>Update - PUT/PATCH</li>
+<li>Delete - DELETE</li>
+</ul>
+<p>看到上面的这个映射关系，如果你说 PUT 和 PATCH 只不过是各自的别名，他们做的其实是同一件事情，我一点也不会惊讶。它们的确都是更新了一个路径上的资源，但却是通过不同的方式来做的。请注意我说的“更新了一个路径上的资源”，这是为什么？</p>
+<p>互联网上的一切东西都可以被称作资源，并伴随着资源的路径地址（URL）和资源的名称（URI）。在这里我们将不讨论后者。</p>
+<p>让我们将互联网想象成一条街道，街道上的房子都是预制构造的（prefabricated），房子的地址就是它的 URL。同时，我们用编号将街道分为不同的区域，每个区域里只有一个房子（比如 house-1 在 plot-1 区域内）。请记住，所有的房子都是预制构造的，它们只需要被放在它们的位置上就行了，不需要任何施工。</p>
+<p>当你对 <code>https://internet-street.com/plot-1</code> 这个地址做一个 PUT 请求，请求的数据为预制构造的房子，你相当于在说“请把这个房子<strong>放在</strong> plot-1 这个区域内”。这个指令就会搜寻整个街道，找到 plot-1 这个区域然后将区域内的东西<strong>替换</strong>掉。如果在指定的地点原来是没有东西的话，就直接将资源放在这个地址上。在这种情况下，就是一个崭新的预制构造的房子。<strong>所以，PUT 方法总是包含一个完整的资源</strong>。这也是 PUT 方法的一个重要的特性——<strong>幂等性</strong>。简单的解释就是，<strong>一次和多次请求某一个资源应该具有同样的副作用</strong>。</p>
+<p>如果说我们想要去用 PUT 方法去更新一个地址上的房子，比如我们要给她加一扇窗户。那我们就需要给 PUT 请求带上一个完整的预制构造的房子作为数据包（payload），这个房子和之前的房子除了窗户的数量不一样以外，其它完全一样。其实这是一种对于带宽的极大的浪费。现在我们的房子和 PUT 请求如下：</p>
+<figure class="highlight javascript"><figcaption><span>House on plot 1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  address: <span class="string">'plot 1'</span>,</span><br><span class="line">  owner: <span class="string">'segun'</span>,</span><br><span class="line">  type: <span class="string">'duplex'</span>,</span><br><span class="line">  color: <span class="string">'green'</span>,</span><br><span class="line">  rooms: <span class="string">'5'</span>,</span><br><span class="line">  kitchens: <span class="string">'1'</span>,</span><br><span class="line">  windows: <span class="number">20</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><figcaption><span>PUT 请求数据包</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  address: <span class="string">'plot 1'</span>,</span><br><span class="line">  owner: <span class="string">'segun'</span>,</span><br><span class="line">  type: <span class="string">'duplex'</span>,</span><br><span class="line">  color: <span class="string">'green'</span>,</span><br><span class="line">  rooms: <span class="string">'5'</span>,</span><br><span class="line">  kitchens: <span class="string">'1'</span>,</span><br><span class="line">  windows: <span class="number">21</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我当然也可以只发送我们需要的数据然后在服务端对这个更新进行处理，但是这样的话我们失去了幂等性和幂等性所带来的一些好处–比如对网络请求回复的缓存以及当原来的请求失败后进行可靠的重试。PUT 请求对于重大的更新是非常有用的。那么我们怎样才能做到对资源做微小修改的同时不去占用过多的带宽呢。这个时候就轮到 PATCH 登场了。</p>
 <blockquote>
-<p>The <code>:last-of-type</code> CSS pseudo-class represents the last element of its type among a group of sibling elements.</p>
+<p>Several applications extending the Hypertext Transfer Protocol (HTTP) require a feature to do partial resource modification. The existing HTTP PUT method only allows a complete replacement of a document. This proposal adds a new HTTP method, PATCH, to modify an existing HTTP resource. - <a href="https://tools.ietf.org/html/rfc5789" target="_blank" rel="noopener">RFC 5798</a></p>
 </blockquote>
-<p>单单这句话并不能得出不作用于类选择器的结论，我们只能猜测，类名可能会破坏 sibling 的结构导致该选择器不能正确的执行。</p>
+<p>与 PUT 方法不同是，PATCH 方法只对某个路径上的资源做部分的更新。也就是说，它只会改变资源的某些属性。通常它都是被用来对资源做一些次要、并且不要求幂等的更新。</p>
+<p>如果我们继续用上面的例子来解释的话，我们可以非常简单的对 plot-1 上的房子加上一个窗户，并且不需要替换掉整个房子。我们要做的仅仅是给原来的房子加上一个窗户然后通过 PATCH 方法发送出去。下面我们用例子说明</p>
+<figure class="highlight javascript"><figcaption><span>House on plot 1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  address: <span class="string">'plot 1'</span>,</span><br><span class="line">  owner: <span class="string">'segun'</span>,</span><br><span class="line">  type: <span class="string">'duplex'</span>,</span><br><span class="line">  color: <span class="string">'green'</span>,</span><br><span class="line">  rooms: <span class="string">'5'</span>,</span><br><span class="line">  kitchens: <span class="string">'1'</span>,</span><br><span class="line">  windows: <span class="number">20</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><figcaption><span>PATCH 请求数据包</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  windows: <span class="number">21</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为 PATCH 方法不是<strong>幂等的</strong>，失败的请求是不会自动重新请求的。如果你尝试用 PATCH 方法向一个不存在的 URL 发送请求，这个请求会直接失败，而不是像 PUT 方法一样创建一个新的资源。</p>
+<blockquote>
+<p>非原创，翻译自原文 <a href="https://medium.com/backticks-tildes/restful-api-design-put-vs-patch-4a061aa3ed0b" target="_blank" rel="noopener">RESTful API Design — PUT vs PATCH</a></p>
+</blockquote>
 
       
     </div>
@@ -419,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/04/centering-css/" rel="next" title="CSS 中常用居中方式总结">
-                <i class="fa fa-chevron-left"></i> CSS 中常用居中方式总结
+              <a href="/2018/11/21/git-ignore-folder/" rel="next" title=".gitignore 忽略文件夹并保留特定的文件">
+                <i class="fa fa-chevron-left"></i> .gitignore 忽略文件夹并保留特定的文件
               </a>
             
           </div>
@@ -428,10 +442,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/18/js-splice-slice/" rel="prev" title="slice() 与 splice() 方法总结">
-                slice() 与 splice() 方法总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
